@@ -1,0 +1,19 @@
+<ul>
+  <% @user.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li> 
+  <% end %>
+</ul>
+
+<%= form_with model: @user do |form| %>
+  <%= form.label :username, "Enter Your Username" %>
+  <%= form.text_field :username, placeholder: "Big Happy Cat" %>
+
+  <%= form.label :email, "E-Mail"%>
+  <%= form.email_field :email, placeholder: "email@example.com" %>
+
+  <%= form.label :password, "Password"%>
+  <%= form.password_field :password %>
+
+  <%= form.submit "Create user" %>
+
+<% end %>
